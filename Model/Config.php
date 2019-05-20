@@ -101,6 +101,6 @@ class Config implements ConfigInterface
     {
         $areaCode = $this->state->getAreaCode();
 
-        return $areaCode == \Magento\Framework\App\Area::AREA_ADMINHTML;
+        return in_array($areaCode,[\Magento\Framework\App\Area::AREA_ADMINHTML, \Magento\Framework\App\Area::AREA_CRONTAB]);
     }
 }
